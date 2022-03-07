@@ -12,6 +12,7 @@ var input = document.querySelector("#input-texto");
 var botonEncriptar = document.querySelector("#btn-encriptar");
 var botonDesencriptar = document.querySelector("#btn-desencriptar");
 var msg = document.querySelector("#msg");
+var botonCopiar = document.querySelector("#btn-copy");
 
 function encriptar(event) {
   event.preventDefault();
@@ -77,3 +78,10 @@ function desencriptar(event) {
 }
 
 botonDesencriptar.addEventListener("click", desencriptar);
+
+function copiar(event) {
+  event.preventDefault();
+  navigator.clipboard.writeText(msg.value);
+}
+
+botonCopiar.addEventListener("click", copiar);
