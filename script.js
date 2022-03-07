@@ -10,6 +10,7 @@ No se permite acentuación de palabras
 
 var input = document.querySelector("#input-texto");
 var botonEncriptar = document.querySelector("#btn-encriptar");
+var botonDesencriptar = document.querySelector("#btn-desencriptar");
 var msg = document.querySelector("#msg");
 
 function encriptar(event) {
@@ -47,3 +48,32 @@ botonEncriptar.addEventListener("click", encriptar);
 Solo letras minusculas
 No se permite acentuación de palabras   
 */
+
+function desencriptar(event) {
+  event.preventDefault();
+  var desencriptado = input.value;;
+
+  if (desencriptado.includes('ai')) {
+    desencriptado = desencriptado.replaceAll('ai', 'a')
+  }
+
+  if (desencriptado.includes('enter')) {
+    desencriptado = desencriptado.replaceAll('enter', 'e')
+  }
+
+  if (desencriptado.includes('imes')) {
+    desencriptado = desencriptado.replaceAll('imes', 'i')
+  }
+
+  if (desencriptado.includes('ober')) {
+    desencriptado = desencriptado.replaceAll('ober', 'o')
+  }
+
+  if (desencriptado.includes('ufat')) {
+    desencriptado = desencriptado.replaceAll('ufat', 'u')
+  }
+
+  msg.value = desencriptado;
+}
+
+botonDesencriptar.addEventListener("click", desencriptar);
